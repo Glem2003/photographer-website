@@ -1,25 +1,48 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// hooks
+import { useTranslation } from "react-i18next";
+import useBreakPoint from "./hooks/useBreakpoint";
 
-function App() {
+// components
+import {
+  Box,
+  Grid,
+  Typography,
+  Button
+} from "@mui/material";
+import NavBar from './components/navBar/navBar'
+import HeroSection from "./components/section/heroSection";
+
+// data
+import { navItems } from './data/navItems'
+
+const App = () => {
+
+  const { t } = useTranslation()
+  const { isTablet, isMobile } = useBreakPoint()
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box>
+      <Grid container size={12}>
+        <Grid size={12}>
+          <Box component={'header'}>
+            <NavBar navItems={navItems} />
+          </Box>
+        </Grid>
+        <Grid size={12}>
+          <Box component={'main'} sx={{ mt: { xs: 7, sm: 8 } }}>
+            <HeroSection />
+            <Box className="Portfolio" component={'section'} sx={{ height: '100vh', position: 'relative' }}>
+
+            </Box>
+          </Box>
+        </Grid>
+        <Grid size={12}>
+          <Box component={'footer'} sx={{ height: 60 }}>
+            Footer
+          </Box>
+        </Grid>
+      </Grid>
+    </Box >
   );
 }
 
