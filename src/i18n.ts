@@ -10,7 +10,7 @@ i18n
     .use(LanguageDetector)
     .use(initReactI18next)
     .init({
-        fallbackLng: 'en',
+        fallbackLng: 'en-US',
         debug: true,
         interpolation: {
             escapeValue: false
@@ -20,7 +20,7 @@ i18n
             caches: ["localStorage", "cookie"],
         },
         resources: {
-            en: { translation: en },
+            'en-US': { translation: en },
             'zh-TW': { translation: zhTW }
         }
     });

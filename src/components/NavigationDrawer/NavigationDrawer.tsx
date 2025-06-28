@@ -11,9 +11,9 @@ import {
 } from "@mui/material";
 
 // type
-import { NavDrawerType } from './navDrawer.type'
+import { NavigationDrawerType } from './NavigationDrawer.type'
 
-const NavDrawer: React.FC<NavDrawerType> = (props) => {
+const NavigationDrawer: React.FC<NavigationDrawerType> = (props) => {
 
     const { t } = useTranslation()
     const { open, onClose, navItems, children } = props
@@ -50,4 +50,4 @@ const NavDrawer: React.FC<NavDrawerType> = (props) => {
     )
 }
 
-export default NavDrawer
+export default NavigationDrawer

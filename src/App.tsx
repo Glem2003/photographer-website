@@ -1,25 +1,19 @@
-// hooks
-import { useTranslation } from "react-i18next";
-import useBreakPoint from "./hooks/useBreakpoint";
-
 // components
 import {
   Box,
   Grid,
-  Typography,
-  Button
+  Divider
 } from "@mui/material";
-import NavBar from './components/navBar/navBar'
-import HeroSection from "./components/section/heroSection";
+import NavBar from './components/NavBar/NavBar'
+import HeroSection from "./components/Section/HeroSection";
+import PortfolioSection from "./components/Section/PortfolioSection";
+import AboutSection from "./components/Section/AboutSection";
+import ServicesSection from './components/Section/ServicesSection'
 
 // data
 import { navItems } from './data/navItems'
 
 const App = () => {
-
-  const { t } = useTranslation()
-  const { isTablet, isMobile } = useBreakPoint()
-
   return (
     <Box>
       <Grid container size={12}>
@@ -31,9 +25,15 @@ const App = () => {
         <Grid size={12}>
           <Box component={'main'} sx={{ mt: { xs: 7, sm: 8 } }}>
             <HeroSection />
-            <Box className="Portfolio" component={'section'} sx={{ height: '100vh', position: 'relative' }}>
 
-            </Box>
+            <PortfolioSection />
+
+            <AboutSection />
+
+            <Divider variant='middle' sx={{ background: '#D4A373' }} />
+
+            <ServicesSection />
+            
           </Box>
         </Grid>
         <Grid size={12}>

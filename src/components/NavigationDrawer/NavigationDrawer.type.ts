@@ -1,4 +1,4 @@
-export interface NavDrawerType {
+export interface NavigationDrawerType {
     open: boolean,
     onClose: () => void,
     navItems: string[],

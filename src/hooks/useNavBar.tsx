@@ -13,7 +13,7 @@ const useNavBar = () => {
     const handleLangChange = () => {
         setLoading(true)
         setTimeout(() => {
-            const newLang = i18n.language === 'en' ? 'zh-TW' : 'en'
+            const newLang = i18n.language === 'en-US' ? 'zh-TW' : 'en-US'
             i18n.changeLanguage(newLang)
             setLoading(false)
         }, 1000)

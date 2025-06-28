@@ -1,6 +1,9 @@
 // hooks
 import { useTranslation } from "react-i18next";
-import useBreakPoint from "../../hooks/useBreakpoint";
+import useResponsiveValue from "../../hooks/useResponsiveValue";
+
+// type
+import { TypographyVariant } from "@mui/material";
 
 // components
 import {
@@ -15,7 +18,6 @@ import { Nature } from "../../assets/images";
 const HeroSection = () => {
 
     const { t } = useTranslation()
-    const { isTablet, isMobile } = useBreakPoint()
 
     return (
         <Box
@@ -64,14 +66,22 @@ const HeroSection = () => {
             >
                 <Typography
                     className="HeroSection_Title"
-                    variant={isTablet && !isMobile ? 'h3' : isMobile ? 'h4' : 'h2'}
+                    variant={useResponsiveValue<TypographyVariant>({
+                        tableValue: 'h3',
+                        mobileValue: 'h4',
+                        laptopValue: 'h2'
+                    })}
                     sx={{ fontWeight: 550 }}
                 >
                     {t('Hero_Section_Title')}
                 </Typography>
                 <Typography
                     className="HeroSection_Subtitle"
-                    variant={isTablet && !isMobile ? 'h4' : isMobile ? 'h5' : 'h3'}
+                    variant={useResponsiveValue<TypographyVariant>({
+                        tableValue: 'h4',
+                        mobileValue: 'h5',
+                        laptopValue: 'h3'
+                    })}
                 >
                     {t('Hero_Section_Subtitle')}
                 </Typography>

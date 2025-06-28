@@ -13,13 +13,13 @@ import {
     ListItem,
     CircularProgress
 } from "@mui/material";
-import NavDrawer from "../navDrawer/navDrawer";
+import NavigationDrawer from "../NavigationDrawer/NavigationDrawer";
 
 // icons
 import { Menu } from "@mui/icons-material";
 
 // type
-import { NavBarType } from "./navBar.type";
+import { NavBarType } from "./NavBar.type";
 import i18n from "../../i18n";
 
 const NavBar: React.FC<NavBarType> = (props) => {
@@ -73,11 +73,11 @@ const NavBar: React.FC<NavBarType> = (props) => {
                             />
                         }
                     >
-                        {i18n.language === 'en' ? '中' : 'en'}
+                        {i18n.language === 'en-US' ? '中' : 'en'}
                     </Button>
                 </Box>
             </Toolbar>
-            <NavDrawer open={isActive} onClose={handleActive} navItems={navItems}>
+            <NavigationDrawer open={isActive} onClose={handleActive} navItems={navItems}>
                 <ListItem>
                     <Button
                         color="inherit"
@@ -93,10 +93,10 @@ const NavBar: React.FC<NavBarType> = (props) => {
                             />
                         }
                     >
-                        {i18n.language === 'en' ? '中' : 'en'}
+                        {i18n.language === 'en-US' ? '中' : 'en'}
                     </Button>
                 </ListItem>
-            </NavDrawer>
+            </NavigationDrawer>
         </AppBar>
     )
 }
