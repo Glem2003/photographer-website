@@ -9,6 +9,7 @@ import HeroSection from "./components/Section/HeroSection";
 import PortfolioSection from "./components/Section/PortfolioSection";
 import AboutSection from "./components/Section/AboutSection";
 import ServicesSection from './components/Section/ServicesSection'
+import ContactSection from './components/Section/ContactSection'
 
 // data
 import { navItems } from './data/navItems'
@@ -33,7 +34,9 @@ const App = () => {
             <Divider variant='middle' sx={{ background: '#D4A373' }} />
 
             <ServicesSection />
-            
+
+            <ContactSection />
+
           </Box>
         </Grid>
         <Grid size={12}>

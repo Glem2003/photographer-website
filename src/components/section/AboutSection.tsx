@@ -14,7 +14,7 @@ import ResponsiveTitle from "../ResponsiveTitle/ResponsiveTitle";
 import { TypographyVariant } from "@mui/material";
 
 // images
-import { Paper, People } from '../../assets/images/index'
+import { People } from '../../assets/images/index'
 
 const AboutSection = () => {
 
@@ -25,36 +25,47 @@ const AboutSection = () => {
             <ResponsiveTitle title={t('About')} />
             <Grid container size={12} p={2}>
                 <Grid
-                    size={{ xs: 10, sm: 4 }}
-                    pr={{ xs: 0, sm: 2 }}
-                    pb={{ xs: 4, sm: 0 }}
+                    size={{ xs: 12, sm: 4 }}
                 >
-                    <img
-                        src={People}
-                        alt='Author'
-                        title="Author"
-                        style={{
-                            borderRadius: '6px',
-                            border: '2px solid white',
-                            maxWidth: '100%',
-                            maxHeight: '100%',
-                            objectFit: 'cover'
-                        }}
-                    />
+                    <Box
+                        display={'flex'}
+                        justifyContent={'center'}
+                        alignItems={'center'}
+                    >
+                        <img
+                            src={People}
+                            alt='Author'
+                            title="Author"
+                            style={{
+                                clipPath: 'circle(40% at 50% 50%)',
+                                border: '2px solid white',
+                                maxWidth: useResponsiveValue<string>({
+                                    tableValue: '100%',
+                                    laptopValue: '100%',
+                                    mobileValue: '60%'
+                                }),
+                                maxHeight: '100%',
+                                objectFit: 'cover',
+                            }}
+                        />
+                    </Box>
                 </Grid>
                 <Grid size={{ xs: 12, sm: 8 }}>
                     <Box
                         className='About_text_wrapper'
                         sx={{
-                            backgroundImage: `url(${Paper})`,
-                            height: 'max-content',
+                            height: '100%',
                             backgroundSize: 'cover',
                             backgroundPosition: 'center',
                             p: 2,
                             borderRadius: '8px',
-                            color: 'black',
-                            opacity: .7
-                        }}>
+                            textAlign: 'center'
+                        }}
+                        display={'flex'}
+                        flexDirection={'column'}
+                        alignItems={'center'}
+                        justifyContent={'center'}
+                    >
                         <Typography
                             variant={useResponsiveValue<TypographyVariant>({
                                 tableValue: 'h4',
@@ -62,7 +73,7 @@ const AboutSection = () => {
                                 laptopValue: 'h3'
                             })}
                         >
-                            👋{t('Portfolio_text.0')}
+                            {t('Portfolio_text.0')}
                         </Typography>
                         <Typography
                             variant={useResponsiveValue<TypographyVariant>({
@@ -82,7 +93,7 @@ const AboutSection = () => {
                             })}
                             sx={{ mt: 2 }}
                         >
-                            🌿{t('Portfolio_text.2')}
+                            {t('Portfolio_text.2')}
                         </Typography>
                         <Typography
                             variant={useResponsiveValue<TypographyVariant>({
@@ -92,7 +103,7 @@ const AboutSection = () => {
                             })}
                             sx={{ mt: 2 }}
                         >
-                            🏔️{t('Portfolio_text.3')}
+                            {t('Portfolio_text.3')}
                         </Typography>
                     </Box>
                 </Grid>

@@ -16,7 +16,7 @@ const ServicesSection = () => {
     const { t } = useTranslation()
 
     return (
-        <Box className="Services" component={'section'}>
+        <Box className="Services" component={'section'} mb={4}>
             <ResponsiveTitle title={t('Services')} />
             <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center" gap={3} mt={4}>
                 {serviceItemData.map((item, index) => {
