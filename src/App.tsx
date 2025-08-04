@@ -39,9 +39,9 @@ const App = () => {
 
           </Box>
         </Grid>
-        <Grid size={12}>
-          <Box component={'footer'} sx={{ height: 60 }}>
-            Footer
+        <Grid size={12} mt={6}>
+          <Box component={'footer'} sx={{ height: 60 }} textAlign={'center'}>
+            Copyright © 2025. All rights reserved.
           </Box>
         </Grid>
       </Grid>

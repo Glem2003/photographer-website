@@ -10,12 +10,10 @@
     "Portfolio_Subtitle": "Collected Frames from the Wild",
     "Click": "Click",
     "Portfolio_text": [
-        "I'm Lee Hyun-woo",
         "A documentary-style photographer who has long wandered between the mountains and the light.",
         "I’m used to capturing those real, unplanned moments with natural light. To me, photography isn’t just a technique—it’s a form of contemplation.",
         "Every shutter click is an act of companionship and documentation—a way to speak with time itself."
     ],
-    
     "Service_1_Title": "Us, in the Forest",
     "Service_1_Subtitle": "Capturing your story in the shade of trees and the sound of wind.",
     "Service_1_Description": "Your connection doesn’t need to be posed. Let’s walk into the woods, to a lakeside or open field — I’ll quietly follow your steps and capture the tenderness in your natural moments. The session flows naturally, just like a peaceful outdoor date.",
@@ -25,7 +23,6 @@
         "Includes full set of professionally edited photos"
     ],
     "Service_1_CTA": "Book a Session",
-    
     "Service_2_Title": "The Distance Between You and the Landscape",
     "Service_2_Subtitle": "Sometimes the meaning of travel is simply walking with yourself.",
     "Service_2_Description": "Whether you're on a solo journey or escaping into the mountains, you don’t need to speak much. I’ll accompany you quietly, documenting the way you move through nature — walking, sitting, reflecting. These aren't staged photos, but fragments of your story.",
@@ -35,7 +32,6 @@
         "Perfect for personal archives, blogs, or self-gifting"
     ],
     "Service_2_CTA": "View Travel Stories",
-    
     "Service_3_Title": "The Way You Work",
     "Service_3_Subtitle": "Moments of deep focus tell more than any retouch ever could.",
     "Service_3_Description": "This is a storytelling session for creators, artists, and small business owners who want more than just a headshot. We’ll shoot in a space where you feel like yourself — at work, in your creative flow, or just being. It's an honest glimpse into your brand's spirit.",
@@ -44,5 +40,14 @@
         "Ideal locations: your studio / workspace / favorite café / outdoors",
         "Includes professionally retouched portraits suitable for websites, bios, and social media"
     ],
-    "Service_3_CTA": "Let's Shoot Your Story"
+    "Service_3_CTA": "Let's Shoot Your Story",
+    "Name": "Name",
+    "Gender": "Gender",
+    "Email": "Email",
+    "Phone": "Phone",
+    "Information_for_us": "Information for us",
+    "Male": "Male",
+    "Female": "Female",
+    "Submit": "Submit",
+    "Reset": "Reset"
 }

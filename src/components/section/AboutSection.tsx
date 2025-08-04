@@ -68,18 +68,19 @@ const AboutSection = () => {
                     >
                         <Typography
                             variant={useResponsiveValue<TypographyVariant>({
-                                tableValue: 'h4',
-                                mobileValue: 'h5',
-                                laptopValue: 'h3'
+                                tableValue: 'h5',
+                                mobileValue: 'h6',
+                                laptopValue: 'h4'
                             })}
+                            sx={{ mt: 2 }}
                         >
                             {t('Portfolio_text.0')}
                         </Typography>
                         <Typography
                             variant={useResponsiveValue<TypographyVariant>({
-                                tableValue: 'h5',
-                                mobileValue: 'h6',
-                                laptopValue: 'h4'
+                                tableValue: 'h6',
+                                mobileValue: 'body1',
+                                laptopValue: 'h5'
                             })}
                             sx={{ mt: 2 }}
                         >
@@ -94,16 +95,6 @@ const AboutSection = () => {
                             sx={{ mt: 2 }}
                         >
                             {t('Portfolio_text.2')}
-                        </Typography>
-                        <Typography
-                            variant={useResponsiveValue<TypographyVariant>({
-                                tableValue: 'h6',
-                                mobileValue: 'body1',
-                                laptopValue: 'h5'
-                            })}
-                            sx={{ mt: 2 }}
-                        >
-                            {t('Portfolio_text.3')}
                         </Typography>
                     </Box>
                 </Grid>
