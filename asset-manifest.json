@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/photographer-website/static/css/main.8f0cacc1.css",
+    "main.js": "/photographer-website/static/js/main.612f8060.js",
+    "static/js/38.368cd30b.chunk.js": "/photographer-website/static/js/38.368cd30b.chunk.js",
+    "static/js/453.dbde707c.chunk.js": "/photographer-website/static/js/453.dbde707c.chunk.js",
+    "static/media/Paper.jpg": "/photographer-website/static/media/Paper.2e3d933483faabc5c1ed.jpg",
+    "static/media/Portfolio_3.jpg": "/photographer-website/static/media/Portfolio_3.8a50c4bedbe3700b33be.jpg",
+    "static/media/Portfolio_4.jpg": "/photographer-website/static/media/Portfolio_4.73e25d191de70001e8bf.jpg",
+    "static/media/Portfolio_1.jpg": "/photographer-website/static/media/Portfolio_1.48bd23acf3a563be03c8.jpg",
+    "static/media/Portfolio_6.jpg": "/photographer-website/static/media/Portfolio_6.20729ad8a6d64cc181ce.jpg",
+    "static/media/Portfolio_2.jpg": "/photographer-website/static/media/Portfolio_2.e55f72d814a995782384.jpg",
+    "static/media/Portfolio_5.jpg": "/photographer-website/static/media/Portfolio_5.e2a0d5bb38d4d774ec15.jpg",
+    "static/media/Nature_Hero_Section.jpg": "/photographer-website/static/media/Nature_Hero_Section.ecef7bb0d56f17a93d36.jpg",
+    "static/media/ServiceItem_2.jpg": "/photographer-website/static/media/ServiceItem_2.de0cae56f840e32cfe7c.jpg",
+    "static/media/ServiceItem_3.jpg": "/photographer-website/static/media/ServiceItem_3.60ef6fbe47b383b2d0c4.jpg",
+    "static/media/ServiceItem_1.jpg": "/photographer-website/static/media/ServiceItem_1.ce840f982c6aa17249ee.jpg",
+    "static/media/People.jpg": "/photographer-website/static/media/People.cff50b38ea054d0fe1be.jpg",
+    "index.html": "/photographer-website/index.html",
+    "main.8f0cacc1.css.map": "/photographer-website/static/css/main.8f0cacc1.css.map",
+    "main.612f8060.js.map": "/photographer-website/static/js/main.612f8060.js.map",
+    "38.368cd30b.chunk.js.map": "/photographer-website/static/js/38.368cd30b.chunk.js.map",
+    "453.dbde707c.chunk.js.map": "/photographer-website/static/js/453.dbde707c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8f0cacc1.css",
+    "static/js/main.612f8060.js"
+  ]
+}
