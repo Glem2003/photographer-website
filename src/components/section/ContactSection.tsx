@@ -12,17 +12,25 @@ import {
     Button
 } from "@mui/material"
 import ResponsiveTitle from "../ResponsiveTitle/ResponsiveTitle"
+import { forwardRef } from 'react'
 
 // hooks
 import { useTranslation } from "react-i18next"
+import useForm from "../../hooks/useForm"
 import useResponsiveValue from "../../hooks/useResponsiveValue"
 
-const ContactSection = () => {
+const ContactSection = forwardRef<HTMLElement, {}>((props, ref) => {
 
     const { t } = useTranslation()
 
+    const { isForm, setForm, handleReset, handleSubmit } = useForm()
+
     return (
-        <Box className="Contact" component={'section'}>
+        <Box
+            className="Contact"
+            component={'section'}
+            ref={ref}
+        >
             <ResponsiveTitle title={t('Contact')} />
             <Grid
                 container
@@ -50,6 +58,8 @@ const ContactSection = () => {
                     <TextField
                         label={t('Name')}
                         variant="standard"
+                        value={isForm.name}
+                        onChange={(e) => setForm(prev => ({ ...prev, name: e.target.value }))}
                         sx={{ width: useResponsiveValue<string>({ tableValue: '40%', mobileValue: '80%', laptopValue: "40%" }) }}
                         slotProps={{
                             input: {
@@ -61,7 +71,11 @@ const ContactSection = () => {
                     />
                     <FormControl>
                         <FormLabel>{t('Gender')}</FormLabel>
-                        <RadioGroup row>
+                        <RadioGroup
+                            row
+                            value={isForm.gender}
+                            onChange={(e) => setForm(prev => ({ ...prev, gender: e.target.value }))}
+                        >
                             <FormControlLabel label={t('Male')} value={'male'} control={<Radio />} />
                             <FormControlLabel label={t('Female')} value={'female'} control={<Radio />} />
                         </RadioGroup>
@@ -69,6 +83,8 @@ const ContactSection = () => {
                     <TextField
                         label={t('Email')}
                         variant="standard"
+                        value={isForm.email}
+                        onChange={(e) => setForm(prev => ({ ...prev, email: e.target.value }))}
                         sx={{ width: useResponsiveValue<string>({ tableValue: '70%', mobileValue: '90%', laptopValue: "70%" }) }}
                         slotProps={{
                             input: {
@@ -80,6 +96,8 @@ const ContactSection = () => {
                     />
                     <TextField
                         label={t('Phone')}
+                        value={isForm.phone}
+                        onChange={(e) => setForm(prev => ({ ...prev, phone: e.target.value }))}
                         variant="standard"
                         sx={{ width: useResponsiveValue<string>({ tableValue: '70%', mobileValue: '90%', laptopValue: "70%" }) }}
                         slotProps={{
@@ -93,6 +111,8 @@ const ContactSection = () => {
                     <FormControl>
                         <FormLabel sx={{ mb: 2 }}>{t('Information_for_us')}</FormLabel>
                         <TextareaAutosize
+                            value={isForm.information}
+                            onChange={(e) => setForm(prev => ({ ...prev, information: e.target.value }))}
                             minRows={5}
                             style={{
                                 minWidth: '40%',
@@ -103,13 +123,13 @@ const ContactSection = () => {
                     </FormControl>
 
                     <Box width={'100%'} display={'flex'} justifyContent={'center'} gap={4}>
-                        <Button>{t('Submit')}</Button>
-                        <Button>{t('Reset')}</Button>
+                        <Button onClick={handleSubmit}>{t('Submit')}</Button>
+                        <Button onClick={handleReset}>{t('Reset')}</Button>
                     </Box>
                 </Box>
             </Grid >
         </Box >
     )
-}
+})
 
 export default ContactSection

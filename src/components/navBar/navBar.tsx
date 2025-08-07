@@ -24,10 +24,16 @@ import i18n from "../../i18n";
 
 const NavBar: React.FC<NavBarType> = (props) => {
 
-    const { navItems } = props
+    const { navItems, sectionRefs } = props
     const { t } = useTranslation()
 
-    const { isActive, isLoading, handleActive, handleLangChange } = useNavBar()
+    const {
+        isActive,
+        isLoading,
+        handleActive,
+        handleLangChange,
+        handleNavClick
+    } = useNavBar()
 
     return (
         <AppBar component={'nav'}>
@@ -56,7 +62,14 @@ const NavBar: React.FC<NavBarType> = (props) => {
                 >
                     {navItems.map((item) => {
                         return (
-                            <Button key={item} color="inherit" size="large">{t(item)}</Button>
+                            <Button
+                                key={item}
+                                color="inherit"
+                                size="large"
+                                onClick={() => handleNavClick(item, sectionRefs[item]?.current || null)}
+                            >
+                                {t(item)}
+                            </Button>
                         )
                     })}
                     <Button
@@ -77,8 +90,13 @@ const NavBar: React.FC<NavBarType> = (props) => {
                     </Button>
                 </Box>
             </Toolbar>
-            <NavigationDrawer open={isActive} onClose={handleActive} navItems={navItems}>
-                <ListItem>
+            <NavigationDrawer
+                open={isActive}
+                onClose={handleActive}
+                navItems={navItems}
+                sectionRefs={sectionRefs}
+            >
+                <ListItem sx={{ display: 'flex', justifyContent: 'center' }}>
                     <Button
                         color="inherit"
                         size="large"

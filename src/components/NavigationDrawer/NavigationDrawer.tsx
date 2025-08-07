@@ -1,5 +1,6 @@
 // hooks
 import { useTranslation } from "react-i18next";
+import useNavBar from "../../hooks/useNavBar";
 
 // components
 import {
@@ -16,7 +17,9 @@ import { NavigationDrawerType } from './NavigationDrawer.type'
 const NavigationDrawer: React.FC<NavigationDrawerType> = (props) => {
 
     const { t } = useTranslation()
-    const { open, onClose, navItems, children } = props
+    const { open, onClose, navItems, children, sectionRefs } = props
+
+    const { handleNavClick } = useNavBar()
 
     return (
         <Drawer
@@ -34,8 +37,13 @@ const NavigationDrawer: React.FC<NavigationDrawerType> = (props) => {
                 {navItems.map((item) => {
                     return (
                         <ListItem>
-                            <ListItemButton>
-                                <ListItemText>{t(item)}</ListItemText>
+                            <ListItemButton
+                                onClick={() => { handleNavClick(item, sectionRefs[item]?.current || null) }}
+                                sx={{
+                                    borderRadius: '8px'
+                                }}
+                            >
+                                <ListItemText sx={{ textAlign: 'center' }}>{t(item)}</ListItemText>
                             </ListItemButton>
                         </ListItem>
                     )

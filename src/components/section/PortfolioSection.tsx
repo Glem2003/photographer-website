@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import useBreakPoint from "../../hooks/useBreakpoint";
 import useImagesDialog from "../../hooks/useImagesDialog";
 import useResponsiveValue from "../../hooks/useResponsiveValue";
+import { forwardRef } from 'react'
 
 //components
 import {
@@ -17,7 +18,7 @@ import ResponsiveTitle from "../ResponsiveTitle/ResponsiveTitle";
 // data
 import { imagesData } from "../../data/imagesData";
 
-const PortfolioSection = () => {
+const PortfolioSection = forwardRef<HTMLElement, {}>((props, ref) => {
 
     const { t } = useTranslation()
     const { isTablet, isMobile } = useBreakPoint()
@@ -25,7 +26,12 @@ const PortfolioSection = () => {
     const { dialogActive, handleActive, handleClose } = useImagesDialog()
 
     return (
-        <Box className="Portfolio" component={'section'} sx={{ height: 'max-content' }}>
+        <Box
+            className="Portfolio"
+            component={'section'}
+            sx={{ height: 'max-content' }}
+            ref={ref}
+        >
             <ResponsiveTitle title={t('Portfolio')} />
             <Typography variant="subtitle1" ml={2} mb={3}>
                 {t('Portfolio_Subtitle')}
@@ -79,6 +85,6 @@ const PortfolioSection = () => {
             />
         </Box>
     )
-}
+})
 
 export default PortfolioSection

@@ -4,6 +4,7 @@ import {
 } from "@mui/material";
 import ResponsiveTitle from "../ResponsiveTitle/ResponsiveTitle";
 import ServiceItem from '../../components/ServiceItem/ServiceItem'
+import { forwardRef } from 'react'
 
 // hooks
 import { useTranslation } from "react-i18next";
@@ -11,12 +12,17 @@ import { useTranslation } from "react-i18next";
 // data
 import { serviceItemData } from "../../data/serviceItemData";
 
-const ServicesSection = () => {
+const ServicesSection = forwardRef<HTMLElement, {}>((props, ref) => {
 
     const { t } = useTranslation()
 
     return (
-        <Box className="Services" component={'section'} mb={4}>
+        <Box
+            className="Services"
+            component={'section'}
+            mb={4}
+            ref={ref}
+        >
             <ResponsiveTitle title={t('Services')} />
             <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center" gap={3} mt={4}>
                 {serviceItemData.map((item, index) => {
@@ -36,6 +42,6 @@ const ServicesSection = () => {
             </Box>
         </Box>
     )
-}
+})
 
 export default ServicesSection

@@ -46,8 +46,9 @@
     "Email": "電子信箱",
     "Phone": "聯絡電話",
     "Information_for_us": "給我們的資訊",
-    "Male":"男",
+    "Male": "男",
     "Female": "女",
     "Submit": "送出",
-    "Reset": "重置"
+    "Reset": "重置",
+    "Submit_message": "感謝您填寫聯絡資料，我們會盡速聯絡您的"
 }

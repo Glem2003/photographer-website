@@ -1,6 +1,7 @@
 // hooks
 import { useTranslation } from "react-i18next";
 import useResponsiveValue from "../../hooks/useResponsiveValue";
+import { forwardRef } from 'react'
 
 // components
 import {
@@ -16,12 +17,16 @@ import { TypographyVariant } from "@mui/material";
 // images
 import { People } from '../../assets/images/index'
 
-const AboutSection = () => {
+const AboutSection = forwardRef<HTMLElement, {}>((props, ref) => {
 
     const { t } = useTranslation()
 
     return (
-        <Box className="About" component={'section'}>
+        <Box
+            className="About"
+            component={'section'}
+            ref={ref}
+        >
             <ResponsiveTitle title={t('About')} />
             <Grid container size={12} p={2}>
                 <Grid
@@ -101,6 +106,6 @@ const AboutSection = () => {
             </Grid>
         </Box>
     )
-}
+})
 
 export default AboutSection

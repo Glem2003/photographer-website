@@ -1,6 +1,7 @@
 // hooks
 import { useTranslation } from "react-i18next";
 import useResponsiveValue from "../../hooks/useResponsiveValue";
+import { forwardRef } from 'react'
 
 // type
 import { TypographyVariant } from "@mui/material";
@@ -15,7 +16,7 @@ import {
 // images
 import { Nature } from "../../assets/images";
 
-const HeroSection = () => {
+const HeroSection = forwardRef<HTMLElement, {}>((props, ref) => {
 
     const { t } = useTranslation()
 
@@ -24,6 +25,7 @@ const HeroSection = () => {
             className="HeroSection"
             component={'section'}
             sx={{ height: '100vh', position: 'relative' }}
+            ref={ref}
         >
             <Box
                 className='HeroSection_background'
@@ -95,6 +97,6 @@ const HeroSection = () => {
             </Box>
         </Box>
     )
-}
+})
 
 export default HeroSection
